@@ -1,43 +1,61 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { FaUserCircle } from "react-icons/fa";
+import { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { FaUserCircle, FaBars, FaTimes } from "react-icons/fa";
+import { MdKeyboardArrowDown, MdOutlineLogout } from "react-icons/md";
+import { FaUser } from "react-icons/fa";
 
 const Header = () => {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
   return (
-    <div className="flex items-center justify-around bg-base-100 shadow-md px-6 py-4">
-      <div className="">
+    <div className="flex items-center justify-between lg:justify-around bg-base-100 shadow-md px-6 py-4 relative">
+      <div className="flex items-center space-x-2">
+        <div className="md:hidden flex items-center">
+          <button onClick={() => setSidebarOpen(true)} className="text-2xl text-purple-800"><FaBars /></button>
+        </div>
         <Link to="/" className="flex items-center space-x-2">
           <img src="/logo.png" alt="Logo" className="w-24" />
         </Link>
       </div>
 
-      <div className="">
-        <ul className="flex items-center gap-6 text-lg font-medium">
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/courses">Courses</Link></li>
-          <li><Link to="/about">About Us</Link></li>
-          <li><Link to="/contact">Contact Us</Link></li>
+      <div className="hidden md:flex items-center gap-6 text-lg font-medium">
+        <NavLink to="/" className={({ isActive }) => isActive ? "text-purple-700 font-medium" : "text-gray-500 font-medium hover:text-purple-700"}>Home</NavLink>
+        <NavLink to="/courses" className={({ isActive }) => isActive ? "text-purple-700 font-medium" : "text-gray-500 font-medium hover:text-purple-700"}>Courses</NavLink>
+        <NavLink to="/about-us" className={({ isActive }) => isActive ? "text-purple-700 font-medium" : "text-gray-500 font-medium hover:text-purple-700"}>About Us</NavLink>
+        <NavLink to="/contact" className={({ isActive }) => isActive ? "text-purple-700 font-medium" : "text-gray-500 font-medium hover:text-purple-700"}>Contact</NavLink>
+      </div>
+
+
+
+      <div className="dropdown dropdown-end">
+        <label tabIndex={0} className="flex items-center gap-2 bg-purple-800 p-2 rounded-lg cursor-pointer">
+          <div className="w-8 rounded-full">
+            <FaUserCircle className="w-full h-full text-2xl text-white" />
+          </div>
+          <p className="text-lg text-white">Abir</p>
+          <MdKeyboardArrowDown className=" text-2xl text-white" />
+        </label>
+        <ul tabIndex={0} className="mt-3 p-2 shadow menu dropdown-content bg-base-100 rounded-box w-40">
+          <li><Link to="/profile"><FaUser /> Profile</Link></li>
+          <li className="flex text-red-500"><button><MdOutlineLogout /> Logout</button></li>
         </ul>
       </div>
 
-      <div className="">
-        <div className="dropdown dropdown-end">
-          <label tabIndex={0} className="flex items-center gap-2 bg-blue-950 p-2 rounded-lg">
-            <div className="w-8 rounded-full">
-              <FaUserCircle className="w-full h-full text-2xl text-gray-600" />
-            </div>
-            <p className="text-lg text-white">Abir</p>
-          </label>
-          <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-40">
-            <li>
-              <Link to="/profile">Profile</Link>
-            </li>
-            <li>
-              <button onClick={() => alert("Logging out...")}>Logout</button>
-            </li>
-          </ul>
+
+        <div className={`fixed md:hidden top-0 left-0 bg-white p-4 h-screen transform ${sidebarOpen ? "translate-x-0" : "-translate-x-full"} md:translate-x-0 duration-300 ease-in-out z-40`}>
+          <div className=" w-64 h-full p-6 relative">
+            <button onClick={() => setSidebarOpen(false)} className="absolute top-4 right-4 text-2xl text-gray-700">
+              <FaTimes />
+            </button>
+            <nav className="flex flex-col gap-4 text-lg font-medium mt-8">
+              <NavLink to="/" onClick={() => setSidebarOpen(false)} className={({ isActive }) => isActive ? "text-purple-700" : "text-gray-700 hover:text-purple-700"}>Home</NavLink>
+              <NavLink to="/courses" onClick={() => setSidebarOpen(false)} className={({ isActive }) => isActive ? "text-purple-700" : "text-gray-700 hover:text-purple-700"}>Courses</NavLink>
+              <NavLink to="/about-us" onClick={() => setSidebarOpen(false)} className={({ isActive }) => isActive ? "text-purple-700" : "text-gray-700 hover:text-purple-700"}>About Us</NavLink>
+              <NavLink to="/contact" onClick={() => setSidebarOpen(false)} className={({ isActive }) => isActive ? "text-purple-700" : "text-gray-700 hover:text-purple-700"}>Contact</NavLink>
+            </nav>
+          </div>
         </div>
-      </div>
+
     </div>
   );
 };

@@ -1,0 +1,76 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "title": "Web Development",
+      "description": "Learn modern web development with React, Node.js, and more",
+      "image": "https://placehold.co/600x400",
+      "price": 299.99,
+      "category": "Referred",
+      "referredCourse": "JavaScript Fundamentals"
+    },
+    {
+      "id": 2,
+      "title": "Data Science",
+      "description": "Master data analysis, machine learning, and AI",
+      "image": "https://placehold.co/600x400",
+      "price": 399.99,
+      "category": "4th Semester",
+      "referredCourse": "Python Programming"
+    },
+    {
+      "id": 3,
+      "title": "Digital Marketing",
+      "description": "Learn SEO, social media marketing, and content strategy",
+      "image": "https://placehold.co/600x400",
+      "price": 249.99,
+      "category": "2nd Semester",
+      "referredCourse": "Content Writing"
+    },
+    {
+      "id": 4,
+      "title": "Mobile App Development",
+      "description": "Build native and cross-platform mobile applications",
+      "image": "https://placehold.co/600x400",
+      "price": 349.99,
+      "category": "Referred",
+      "referredCourse": "React Native Basics"
+    },
+    {
+      "id": 5,
+      "title": "UI/UX Design",
+      "description": "Master the art of creating beautiful and functional user interfaces",
+      "image": "https://placehold.co/600x400",
+      "price": 279.99,
+      "category": "4th Semester",
+      "referredCourse": "Graphic Design Fundamentals"
+    },
+    {
+      "id": 6,
+      "title": "Cloud Computing",
+      "description": "Learn AWS, Azure, and Google Cloud Platform",
+      "image": "https://placehold.co/600x400",
+      "price": 429.99,
+      "category": "2nd Semester",
+      "referredCourse": "Networking Basics"
+    },
+    {
+      "id": 7,
+      "title": "Cybersecurity",
+      "description": "Protect systems and networks from digital attacks",
+      "image": "https://placehold.co/600x400",
+      "price": 379.99,
+      "category": "Referred",
+      "referredCourse": "Network Security"
+    },
+    {
+      "id": 8,
+      "title": "DevOps",
+      "description": "Master continuous integration and deployment",
+      "image": "https://placehold.co/600x400",
+      "price": 329.99,
+      "category": "4th Semester",
+      "referredCourse": "Linux Administration"
+    }
+  ]
+} 
