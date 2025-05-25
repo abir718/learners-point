@@ -35,7 +35,7 @@ const Header = () => {
           <MdKeyboardArrowDown className=" text-2xl text-white" />
         </label>
         <ul tabIndex={0} className="mt-3 p-2 shadow menu dropdown-content bg-base-100 rounded-box w-40">
-          <li><Link to="/profile"><FaUser /> Profile</Link></li>
+          <li><Link to="/dashboard"><FaUser /> Profile</Link></li>
           <li className="flex text-red-500"><button><MdOutlineLogout /> Logout</button></li>
         </ul>
       </div>

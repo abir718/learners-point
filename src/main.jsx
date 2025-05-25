@@ -8,6 +8,8 @@ import AboutUs from './pages/AboutUs'
 import './index.css'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import RefundPolicy from './pages/RefundPolicy'
+import Dashtext from './Dashboard/Dashtext'
+import Dashboard from './Dashboard/Dashboard'
 
 const router = createBrowserRouter([
   {
@@ -35,7 +37,25 @@ const router = createBrowserRouter([
         element: <RefundPolicy />
       }
     ]
-  }
+  }, 
+  {
+    path: "/dashboard",
+    element: <Dashboard />,
+    children: [
+      {
+        path: '/dashboard',
+        element: <Dashtext />,
+      },
+      {
+        path: 'add-course',
+        element: <Dashtext />,
+      },
+      {
+        path: 'admin-alluser',
+        element: <Dashtext />,
+      },
+    ],
+  },
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
