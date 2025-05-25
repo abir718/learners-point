@@ -6,6 +6,8 @@ import HomeContent from './pages/HomeContent'
 import Courses from './pages/Courses'
 import AboutUs from './pages/AboutUs'
 import './index.css'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import RefundPolicy from './pages/RefundPolicy'
 
 const router = createBrowserRouter([
   {
@@ -23,6 +25,14 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <AboutUs />
+      },
+      {
+        path: "/privacy-policy",
+        element: <PrivacyPolicy />
+      },
+      {
+        path: "/refund-policy",
+        element: <RefundPolicy />
       }
     ]
   }

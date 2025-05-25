@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import coursesData from '../data/courses.json'
-import AOS from 'aos'
-import 'aos/dist/aos.css'
+
+
 
 const Courses = () => {
   const { courses } = coursesData

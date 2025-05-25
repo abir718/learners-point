@@ -21,8 +21,7 @@ const Header = () => {
       <div className="hidden md:flex items-center gap-6 text-lg font-medium">
         <NavLink to="/" className={({ isActive }) => isActive ? "text-purple-700 font-medium" : "text-gray-500 font-medium hover:text-purple-700"}>Home</NavLink>
         <NavLink to="/courses" className={({ isActive }) => isActive ? "text-purple-700 font-medium" : "text-gray-500 font-medium hover:text-purple-700"}>Courses</NavLink>
-        <NavLink to="/about-us" className={({ isActive }) => isActive ? "text-purple-700 font-medium" : "text-gray-500 font-medium hover:text-purple-700"}>About Us</NavLink>
-        <NavLink to="/contact" className={({ isActive }) => isActive ? "text-purple-700 font-medium" : "text-gray-500 font-medium hover:text-purple-700"}>Contact</NavLink>
+        <NavLink to="/about" className={({ isActive }) => isActive ? "text-purple-700 font-medium" : "text-gray-500 font-medium hover:text-purple-700"}>About Us</NavLink>
       </div>
 
 
